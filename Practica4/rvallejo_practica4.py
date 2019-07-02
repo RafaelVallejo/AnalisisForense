@@ -120,7 +120,7 @@ def readFile(read_file, type_files, size_file):
 		for file in range(len(start_f)):
 			for f in end_f:
 				if start_f[file] < f:
-					output_file = str(time.time()).replace('.','_') + "_" + str(f) +"." + key
+					output_file = str(time.time()).replace('.','_') + "_" + str(file + f) +"." + key
 					if f == len(data):	save_files(output_file, data[start_f[file]:])
 					else:	save_files(output_file, data[start_f[file]:f+1])
 
@@ -134,7 +134,7 @@ def save_files(of, recover):
 	"""
 	with open(of, 'wb') as output:
 		output.write(recover)
-	print "Archivo recuperado: " + of
+		print "Archivo recuperado: " + of
 
 if __name__ == '__main__':
 	opts = addOptions()
