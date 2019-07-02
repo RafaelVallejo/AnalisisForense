@@ -32,7 +32,7 @@ def addOptions():
 	parser.add_argument('-r','--file', dest='read_file', default=None, help='Archivo del que se quiere realizar la recuperacion de archivos.')
 	parser.add_argument('-t', '--type_file', dest= 'type_file', default=['all'], nargs='+', help ='Indica el/los formato(s) de archivos a recuperar separados por coma (zip, exe, gif, png, jpg, jpeg, all). Por defecto son todos.')
 	parser.add_argument('-c','--conf', dest='conf_file', default="rvallejo_conf.conf", help='Archivo de configuracion con formatos de recuperacion. Por defecto: rvallejo_conf.conf')
-	parser.add_argument('-s','--size', dest='size_file', default=None, help='Tamaño del archivo a recuperar.')
+	parser.add_argument('-s','--size', dest='size_file', default=None, help='Tamaño del archivo a recuperar numero[BKMG]. Ejemplo: 2K')
 	
 	opts = parser.parse_args()
 	return opts
