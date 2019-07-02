@@ -113,7 +113,8 @@ def readFile(read_file, type_files, size_file):
 		start_f = [ S.start() for S in re.finditer(type_files[key][0], data, re.I) ]
 		if size_file is not None:
 			end_f = sizes(start_f, size_file)
-		elif re.search(r'[0-9]+[MGKB]',type_files[key][1]):
+		elif re.match(r'[0-9]+[MGKB]',type_files[key][1]):
+			print type_files[key][1]
 			end_f = sizes(start_f, type_files[key][1])
 		else:
 			end_f =  [ E.end() for E in re.finditer(type_files[key][1], data, re.I) ]
